@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace App\Aplication\Service;
+namespace App\Application\Service;
 
 use Symfony\Component\Uid\Ulid;
 

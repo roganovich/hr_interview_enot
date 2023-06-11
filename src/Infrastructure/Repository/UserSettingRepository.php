@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infrastructure\Repository;
 
 use App\Domain\Entity\UserSetting;
@@ -13,8 +15,9 @@ class UserSettingRepository
         $this->setting = $setting;
     }
 
-    public function save(){
-        /** SAVE Settings*/
+    public function save()
+    {
+        /** TODO сохранение настроек */
         return true;
     }
 

@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace App\Aplication\Service;
+namespace App\Application\Service;
 
 class CodeMaker
 {

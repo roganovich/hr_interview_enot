@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Domain\Value;
 
-abstract class AbstractValue
+abstract class AbstractValue implements DomainValueInterface
 {
     /**
-     * @return  string
+     * @return string
      */
     public function getValue()
     {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Domain\Entity;
@@ -7,12 +8,8 @@ use App\Domain\Value\ValueUserName;
 use App\Domain\Value\ValueEmail;
 use App\Domain\Value\ValueUIID;
 
-class User
+final class User
 {
-    protected $id;
-    protected $name;
-    protected $email;
-
     /**
      * @return ValueUIID
      */
@@ -29,10 +26,15 @@ class User
         return $this->name;
     }
 
-    public function __construct(ValueUIID $id, ValueUserName $name, ValueEmail $email)
+    /**
+     * @return ValueEmail
+     */
+    public function getEmail()
     {
-        $this->id = $id->getValue();
-        $this->name = $name->getValue();
-        $this->email = $email->getValue();
+        return $this->email;
+    }
+
+    public function __construct(private ValueUIID $id, private ValueUserName $name, private ValueEmail $email)
+    {
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Domain\Entity;
 
 use App\Domain\Value\ValueUIID;
 use App\Domain\Value\ValueSettingName;
-use App\Domain\Value\ValueNotNull;
+use App\Domain\Value\DomainValueInterface;
 
 class UserSetting
 {
@@ -15,7 +16,7 @@ class UserSetting
     protected $user;
 
     /**
-     * @return mixed
+     * @return ValueUIID
      */
     public function getId()
     {
@@ -23,15 +24,15 @@ class UserSetting
     }
 
     /**
-     * @return string
+     * @return ValueSettingName
      */
-    public function getName(): string
+    public function getName()
     {
-        return $this->name?->getValue();
+        return $this->name;
     }
 
     /**
-     * @return mixed
+     * @return DomainValueInterface
      */
     public function getValue()
     {
@@ -46,11 +47,11 @@ class UserSetting
         return $this->user;
     }
 
-    public function __construct(ValueUIID $id, ValueSettingName $name, ValueNotNull $value, User $user)
+    public function __construct(ValueUIID $id, ValueSettingName $name, DomainValueInterface $value, User $user)
     {
-        $this->id = $id->getValue();
-        $this->name = $name->getValue();
-        $this->value = $value->getValue();
+        $this->id = $id;
+        $this->name = $name;
+        $this->value = $value;
         $this->user = $user;
     }
 }

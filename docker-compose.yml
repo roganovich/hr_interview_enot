@@ -1,0 +1,9 @@
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: Fpm.Dockerfile
+    restart: unless-stopped
+    tty: true
+    container_name: enot_php
+
